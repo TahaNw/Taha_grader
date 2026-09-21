@@ -1,0 +1,58 @@
+You are evaluating two customer support replies.
+
+The company policy is the source of truth.
+
+Evaluate both answers using these criteria:
+
+1. Correctness
+- The answer must not contradict the policy.
+- The answer must not invent important information.
+- Claims about prices, refunds, deadlines, procedures, or compensation
+  must be supported by the policy.
+
+2. Completeness
+- The answer should address the customer's actual request.
+- Important information from the policy should be included when relevant.
+
+3. Politeness
+- The answer should be respectful and professional.
+
+4. Clarity
+- The answer should be understandable and direct.
+
+Give each answer an overall score from 1 to 5.
+
+5 = Excellent
+4 = Good
+3 = Acceptable
+2 = Poor
+1 = Very poor
+
+Important:
+- Do not prefer an answer because it appears first.
+- Do not prefer an answer because it appears second.
+- Do not reward an answer simply because it is longer.
+- Do not penalize an answer simply because it is concise.
+- Judge both answers independently using the same criteria.
+- Use only the company policy as the source of truth.
+
+Customer message:
+{customer_message}
+
+Company policy:
+{policy}
+
+Answer A:
+{answer_a}
+
+Answer B:
+{answer_b}
+
+Return only JSON in this format:
+
+{{
+  "score_a": 1,
+  "score_b": 1,
+  "reason_a": "short reason",
+  "reason_b": "short reason"
+}}
