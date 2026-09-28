@@ -4,8 +4,6 @@
 
 Date: 2026-09-18
 
-Initial customer-support prompt.
-
 ### Changes
 
 - Added policy-based answering.
@@ -17,7 +15,6 @@ Initial customer-support prompt.
 ### Evaluation
 
 Test set:
-
 - Test items: **50**
 - Mean score: **4.480**
 - Score distribution:
@@ -30,7 +27,6 @@ Test set:
 ### Judge Reliability
 
 Using the 92 items with matching human labels:
-
 - Exact agreement: **41.30%**
 - Cohen's κ: **0.178**
 
@@ -61,8 +57,6 @@ The goal was to improve correctness and completeness while reducing unsupported 
 
 ### Results Compared with v1
 
-Both versions were evaluated on the same **50-item held-out test set**.
-
 | Measure | v1 | v2 | Change |
 |---|---:|---:|---:|
 | Test items | 50 | 50 | — |
@@ -79,8 +73,6 @@ The v2 mean score increased by **0.120 points**. Six more test items received a 
 
 ### Judge Reliability
 
-Using the same 92 resolved human-reference items:
-
 | Measure | v1 | v2 | Change |
 |---|---:|---:|---:|
 | Agreements | 38 | 43 | +5 |
@@ -92,14 +84,14 @@ The v2 judge showed higher agreement with the resolved human reference.
 
 ### Performance
 
-The prompt improvement also increased inference time:
-
 | Measure | v1 | v2 |
 |---|---:|---:|
 | Generation latency | 7.04 sec/item | 9.47 sec/item |
 | Judge latency | 8.30 sec/item | 12.05 sec/item |
 | Complete harness latency | 15.34 sec/item | 21.52 sec/item |
 | Direct API cost | $0 | $0 |
+
+The prompt improvement resulted in an increase in inference time.
 
 ### Conclusion
 

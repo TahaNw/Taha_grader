@@ -22,8 +22,6 @@ The labelling guide defines:
 - **2 — Poor:** contains a significant issue or misses important information.
 - **1 — Very Poor:** substantially incorrect, unusable, contradictory, or contains important invented information.
 
-The guide also states that concise answers should not be penalized and unnecessary length should not be rewarded.
-
 The two labelers agreed on **92 of 150 items (61.33%)**, with **58 disagreements**. Cohen's kappa was **0.447**, indicating moderate agreement. For judge-reliability analysis, the 92 items where both labelers agreed were used as the human reference.
 
 ## 3. Evaluation Harness
@@ -36,9 +34,9 @@ The evaluation pipeline is:
 
 The system uses **Qwen2.5 7B**, executed locally through Ollama. The system prompt instructs the model to follow the policy, avoid unsupported claims, answer the customer's actual question, and remain clear and concise.
 
-The judge receives the customer message, policy, and generated answer. It returns a structured JSON object containing a score from 1 to 5 and a short explanation. Pydantic validation is used to enforce the expected output structure.
+The judge receives the customer message, policy, and generated answer. It returns a structured JSON object containing a score from 1 to 5 and a short explanation.
 
-Each result records the item ID, split, input information, generated answer, judge score, reason, generation latency, judge latency, total latency, and estimated cost. Results are stored as JSONL for reproducibility and later analysis.
+Each result records the item ID, split, input information, generated answer, judge score, reason, generation latency, judge latency, total latency, and estimated cost.
 
 ## 4. LLM Judge Reliability
 
@@ -70,8 +68,7 @@ The result shows that answer order can influence the judge's evaluation. Therefo
 
 ## 6. Verbosity Bias
 
-Verbosity bias was tested by taking each generated answer and appending irrelevant, repetitive customer-service text. The original and padded answers were then evaluated separately.
-
+Verbosity bias was tested by taking each generated answer and appending irrelevant, repetitive customer-service text.
 The results were:
 
 | Result after padding | Items | Percentage |
@@ -106,7 +103,7 @@ The same 50-item test set was used for both versions.
 | Scores changed | — | 10 |
 | Scores unchanged | — | 40 |
 
-The mean test-set score increased from **4.480 to 4.600 (+0.120)**. Ten of the 50 test items changed score, while 40 remained unchanged. The v2 results therefore show an improvement on this test set, although the magnitude of the change is relatively small.
+The mean test-set score increased from **4.480 to 4.600 (+0.120)**. Ten of the 50 test items changed score, while 40 remained unchanged. The v2 results therefore show an improvement on this test set.
 
 ## 8. System Performance and Cost
 
